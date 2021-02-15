@@ -11,7 +11,19 @@ Read the article on SitePoint: [Link](https://www.sitepoint.com/fetching-data-th
 
 ## Installation Steps
 
-1. Acquire your NYTimes API key from [New York Times Developer Network](https://developer.nytimes.com)
+1. Clone repo
+
+2. Execute `yarn install`
+
+3. Acquire your NYTimes API key from [New York Times Developer Network](https://developer.nytimes.com)
+
+4. Create an `.env` file at the root of this project and place it using the format `VITE_NYT_API_KEY=<put your api key here>
+
+5. Execute `yarn dev` to start the dev server
+
+6. Open your browser and point it to `http://localhost:3030`
+
+Visit [Vite](https://vitejs.dev/) website for more commands you can run with this project.
 
 ## License
 
