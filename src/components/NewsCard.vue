@@ -1,11 +1,14 @@
 <template>
   <section class="p-4 rounded-lg shadow-lg bg-gray-50 w-80">
     <div class="h-96">
-      <h3 class="text-xl font-bold text-center text-green-800">
-        <a class="hover:text-green-600 hover:underline" :href="post.url">{{
-          post.title
-        }}</a>
-      </h3>
+      <a
+        class="text-xl font-bold text-center text-green-800 hover:text-green-600 hover:underline"
+        :href="post.url"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {{ post.title }}
+      </a>
       <img
         class="w-full mt-2 rounded"
         :src="post.thumbnail"
