@@ -16,9 +16,9 @@
     <!-- Start of error alert -->
     <div class="mt-12 bg-red-50" v-if="error">
       <h3 class="px-4 py-1 text-4xl font-bold text-white bg-red-800">
-        {{ this.error.title }}
+        {{ error.title }}
       </h3>
-      <p class="p-4 text-lg font-bold text-red-900">{{ this.error.message }}</p>
+      <p class="p-4 text-lg font-bold text-red-900">{{ error.message }}</p>
     </div>
     <!-- End of error alert -->
   </Layout>
