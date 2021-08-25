@@ -15,14 +15,14 @@
       </svg>
       <select
         class="h-10 pl-5 pr-10 text-gray-600 bg-white border border-gray-300 rounded-lg appearance-none hover:border-gray-400 focus:outline-none"
-        v-model="section"
+        v-model="user_id"
       >
         <option
-          v-for="(section, index) in sections"
+          v-for="(user_id, index) in user_ids"
           :key="index"
-          :value="section"
+          :value="user_id"
         >
-          {{ capitalize(section) }}
+          {{ capitalize(user_id) }}
         </option>
       </select>
     </div>
@@ -40,7 +40,7 @@
 
 <script>
 import { computed } from "vue"
-import sectionsData from "./sections"
+import user_idsData from "./sections"
 
 export default {
   props: {
@@ -48,18 +48,18 @@ export default {
     fetch: Function,
   },
   setup(props, { emit }) {
-    const section = computed({
+    const user_id = computed({
       get: () => props.modelValue,
       set: value => emit("update:modelValue", value),
     })
 
     return {
-      section,
+      user_id,
     }
   },
   data() {
     return {
-      sections: sectionsData,
+      user_ids: user_idsData,
     }
   },
   methods: {

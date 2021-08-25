@@ -1,30 +1,7 @@
-const sections = [
-  "home",
-  "arts",
-  "automobiles",
-  "books",
-  "business",
-  "fashion",
-  "food",
-  "health",
-  "insider",
-  "magazine",
-  "movies",
-  "nyregion",
-  "obituaries",
-  "opinion",
-  "politics",
-  "realestate",
-  "science",
-  "sports",
-  "sundayreview",
-  "technology",
-  "theater",
-  "magazine",
-  "travel",
-  "upshot",
-  "us",
-  "world",
+const user_ids = [
+  "1",
+  "2",
+  "3",
 ]
 
-export default sections
+export default user_ids

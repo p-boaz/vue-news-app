@@ -2,7 +2,7 @@
   <div
     class="grid grid-cols-1 gap-6 mt-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 justify-items-center"
   >
-    <NewsCard v-for="(post, index) in posts" :key="index" :post="post" />
+    <NewsCard v-for="(item, index) in items" :key="index" :item="item" />
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 import NewsCard from "./NewsCard.vue"
 export default {
   props: {
-    posts: {
+    items: {
       type: Array,
       required: true,
     },
