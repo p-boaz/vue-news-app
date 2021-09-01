@@ -3,8 +3,8 @@
     <div class="h-25">
       <h2 class="mb-2 text-lg">{{ variables.AL_DEFAULT_COUNTRY }}</h2>
         <ul class="font-mono text-sm font-light text-gray-700 transition-all duration-200 hover:text-gray-900">
-            <li>{{ variables.user_role }}</li>
-            <li>{{ variables.rent_amount }}</li>
+            <li>{{ variables.Dingo.name }}</li>
+            <li>{{ variables.Dingo.feet }}</li>
         </ul>
     </div>
   </section>

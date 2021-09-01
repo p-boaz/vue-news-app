@@ -113,7 +113,7 @@ export default {
       this.loading = true
       const url = `https://ny.barplaybook.com/api/session?key=${api}`
       const session = `${this.session}`
-      const i = `docassemble.SanitaryCode:data/questions/sanitary_code_standalone.yml`
+      const i = `docassemble.testServer:data/questions/dict_of_objects.yml`
       const secret = `rbxUsjKfHlDuAOdr`
       axios
         .get(url,{params:{
@@ -121,7 +121,7 @@ export default {
         session: session,
         secret: secret,
         }})
-      .then(response => (this.variables = response.data))
+      .then(response => (this.variables = response.data.pet.elements))
     } catch (err) {
       if (err.response) {
         // client received an error response (5xx, 4xx)
