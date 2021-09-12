@@ -1,6 +1,6 @@
-const user_ids = [
-  "1",
-  "2",
+const tags = [
+  "Sales",
+  "Human Resources",
   "3",
   "4",
   "5",
@@ -9,4 +9,4 @@ const user_ids = [
   "8",
 ]
 
-export default user_ids
+export default tags

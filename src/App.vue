@@ -2,9 +2,9 @@
   <Layout>
     <div>
       <h2 class="mb-8 text-4xl font-bold text-center capitalize">
-        User List : <span class="text-green-700">{{ user_id }}</span>
+        Business Functions : <span class="text-green-700">{{ tag }}</span>
       </h2>
-      <NewsFilter v-model="user_id" :fetch="fetchItems" />
+      <NewsFilter v-model="tag" :fetch="fetchItems" />
       <NewsList v-if="!loading && !error" :items="items" />
       <!-- Start of loading animation -->
       <div class="mt-40" v-if="loading">
@@ -41,8 +41,9 @@ export default {
   },
   data() {
     return {
-      user_id: "1",
+      tag: "",
       items: [],
+      elements: [],
       loading: false,
       error: null,
     }
@@ -52,15 +53,17 @@ export default {
       try {
         this.error = null
         this.loading = true
-        const url = `https://ny.barplaybook.com/api/user/${this.user_id}/interviews?key=${api}`
+        const url = `https://ny.barplaybook.com/api/interviews?key=${api}&tag=${this.tag}&include_dictionary=1`
         const response = await axios.get(url)
         const results = response.data.items
         this.items = results.map(item => ({
           title: item.title,
           email: item.email,
+          tags: item.tags,
           filename: item.filename,
           session: item.session,
           published_date: item.published_date,
+          dict: item.dict,
         }))
       } catch (err) {
         if (err.response) {
