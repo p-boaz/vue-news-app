@@ -3,7 +3,7 @@
   <div class="overflow-hidden bg-white shadow sm:rounded-lg">
     <div class="px-4 py-5 sm:px-6">
       <h3 class="text-lg font-medium leading-6 text-gray-900">
-        Data Information
+        {{ item.dict.room }}
       </h3>
       <p class="max-w-2xl mt-1 text-sm text-gray-500">
         Details and application.
@@ -11,15 +11,36 @@
     </div>
     <div
     class="border-t border-gray-200"
-    v-for="element in item.dict.activity.categories_of_data.elements"
+    v-for="element in item.dict.data_types.elements"
+    v-bind:key="element"
     >
       <dl>
         <div class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500">
             Name
           </dt>
-          <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-            {{ element.name.text }}
+          <dd
+          class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"
+          >
+            <ul
+            role="list" class="border border-gray-200 divide-y divide-gray-200 rounded-md">
+              <li
+              class="flex items-center justify-between py-3 pl-3 pr-4 text-sm"
+              v-for="(value, key) in element.details.elements"
+              v-bind:key="key"
+              >
+                <div class="flex items-center flex-1 w-0">
+                  <span class="flex-1 w-0 ml-2 truncate">
+                    {{ key }}
+                  </span>
+                </div>
+                <div class="flex-shrink-0 ml-4">
+                  <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
+                    Review
+                  </a>
+                </div>
+              </li>
+            </ul>
           </dd>
         </div>
         <div class="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -27,7 +48,7 @@
             Data Subjects
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-            {{ element.indiv }}
+            <!-- {{ element.indiv }} -->
           </dd>
         </div>
         <div class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -35,7 +56,7 @@
             Exporting Country
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-            {{ element.exporting_country.name }}
+            <!-- {{ element.exporting_country.name }} -->
           </dd>
         </div>
         <div class="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -43,7 +64,7 @@
             Importing Country
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-            {{ element.importing_country.name }}
+            <!-- {{ element.importing_country.name }} -->
           </dd>
         </div>
         <div class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -51,7 +72,7 @@
             Purpose
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-            {{ element.purpose }}
+            <!-- {{ element.purpose }} -->
           </dd>
         </div>
         <div class="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
